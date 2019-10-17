@@ -1,0 +1,50 @@
+{
+  "name": "product-hunt-clone",
+  "version": "0.0.1",
+  "description": "A clone of Product Hunt web built with React, Express and GraphQL.",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexdevero/product-hunt-clone.git"
+  },
+  "homepage": "https://github.com/alexdevero/product-hunt-clone#readme",
+  "bugs": {
+    "url": "https://github.com/alexdevero/pproduct-hunt-clone/issues"
+  },
+  "author": {
+    "name": "Alex Devero",
+    "url": "https://alexdevero.com/"
+  },
+  "contributors": [
+    {
+      "name": "",
+      "email": "",
+      "url": ""
+    }
+  ],
+  "keywords": [
+    "app",
+    "express",
+    "graphql",
+    "javascript",
+    "react",
+    "reactjs",
+    "open",
+    "open-source",
+    "source"
+  ],
+  "engines": {
+    "node": ">=12.0",
+    "npm": ">=6.10.0",
+    "yarn": ">=1.15.0"
+  },
+  "main": "main.js",
+  "scripts": {
+    "build": "echo \"No script specified\"",
+    "start": "echo \"No script specified\"",
+    "test": "echo \"No script specified\""
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
