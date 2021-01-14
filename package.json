@@ -1,7 +1,7 @@
 {
-  "name": "product-hunt-clone",
+  "name": "podcast-hunt-clone",
   "version": "0.0.1",
-  "description": "A clone of Product Hunt web built with React, Express and GraphQL.",
+  "description": "A clone of Product Hunt web built with MongoDB, Express and React.",
   "license": "MIT",
   "private": false,
   "repository": {
@@ -26,7 +26,6 @@
   "keywords": [
     "app",
     "express",
-    "graphql",
     "javascript",
     "react",
     "reactjs",
