@@ -1,7 +1,6 @@
 # Development folders and files #
 #################################
 .tmp/
-dist/
 node_modules/
 
 # Folder config file #
@@ -15,9 +14,18 @@ __ignore__/
 # Log files & folders #
 #######################
 logs/
+/.pnp
 *.log
 npm-debug.log*
 .npm
+.pnp.js
+
+# envs #
+########
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Packages #
 ############
@@ -37,6 +45,14 @@ npm-debug.log*
 *.ai
 *.eps
 *.psd
+
+# Production #
+##############
+build/
+
+# Testing #
+###########
+/coverage
 
 # Windows & Mac file caches #
 #############################
