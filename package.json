@@ -39,11 +39,24 @@
     "npm": ">=6.10.0",
     "yarn": ">=1.15.0"
   },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "main": "main.js",
   "scripts": {
-    "build": "echo \"No script specified\"",
-    "start": "echo \"No script specified\"",
-    "test": "echo \"No script specified\""
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
