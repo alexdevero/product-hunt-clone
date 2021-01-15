@@ -32,3 +32,22 @@ router.get('/:episode_id', async (req, res) => {
   }
 })
 
+
+router.patch('/update', async (req, res) => {
+  try {
+    const updateEpisode = { ...req.body }
+
+    const episode = Episode.findOneAndUpdate({ username: req.body.episode_id }, updateEpisode, { useFindAndModify: false }, (err) => {
+      if (err) {
+        res.status(500).json({ message: err })
+      } else {
+        res.json({ message: 'User updated.' })
+      }
+    })
+  } catch (err) {
+    res.status(500).json({
+      message: err.message
+    })
+  }
+})
+
