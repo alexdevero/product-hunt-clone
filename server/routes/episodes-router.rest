@@ -1,0 +1,29 @@
+# Get all episodes
+GET http://localhost:5000/episodes/
+
+###
+
+# Get specific episode
+GET http://localhost:5000/episodes/foo
+
+###
+
+# Create new episode
+
+POST http://localhost:5000/episodes/create
+Content-Type: application/json
+{}
+
+###
+
+# Update existing episode
+PATCH http://localhost:5000/episodes/update
+Content-Type: application/json
+{}
+
+###
+
+# Delete existing episode
+DELETE HTTP/1.1 http://localhost:5000/episodes/delete
+Content-Type: application/json
+{}
