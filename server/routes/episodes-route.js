@@ -32,6 +32,23 @@ router.get('/:episode_id', async (req, res) => {
   }
 })
 
+router.post('/create', async (req, res) => {
+  try {
+    const episode = new Episode({
+      title: req.body.title,
+      url: req.body.url,
+      description: req.body.description
+    })
+
+    const newEpisode = await episode.save()
+
+    res.json({ message: 'Episode created.' })
+  } catch (err) {
+    res.status(500).json({
+      message: err.message
+    })
+  }
+})
 
 router.patch('/update', async (req, res) => {
   try {
