@@ -34,7 +34,7 @@ mongoose.connection.on('error', (err) => console.log(err))
 // Import routes
 // const homeRoute = require('./routes/')
 // const podcastsRoute = require('./routes/')
-// const episodesRoute = require('./routes/')
+const episodesRoute = require('./routes/episodes-route')
 // const usersRoute = require('./routes/')
 
 // Setup app
@@ -64,10 +64,10 @@ app.use((req, res, next) => {
   next()
 })
 
-// app.use('/api/', home)
-// app.use('/api/podcasts', podcasts)
-// app.use('/api/episodes', episodes)
-// app.use('/api/users', users)
+// app.use('/api/', homeRoute)
+// app.use('/api/podcasts', podcastsRoute)
+app.use('/api/episodes', episodesRoute)
+// app.use('/api/users', usersRoute)
 
 // app.get('*', (req, res) => {
 //   res.sendFile(path.join(__dirname, '../build/index.html'))
