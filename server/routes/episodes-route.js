@@ -72,14 +72,22 @@ router.patch('/update', async (req, res) => {
   }
 })
 
-router.delete('/delete/:episode_id', async (req, res) => {
+router.delete('/delete', async (req, res) => {
   try {
-    const episode = await Episode.remove({ id: req.params.episode_id })
-
-    res.json({ message: 'Episode deleted.' })
+    if (req.body._id !== null) {
+      const episode = await Episode.remove({ _id: req.body._id }, (err) => {
+        if (err) {
+          res.status(500).json({ message: err.message })
+        } else {
+          res.json({ message: 'Episode deleted.' })
+        }
+      })
+    }
   } catch (err) {
     res.status(500).json({
       message: err.message
     })
   }
 })
+
+module.exports = router
