@@ -4,26 +4,37 @@ GET http://localhost:5000/api/episodes
 ###
 
 # Get specific episode
-GET http://localhost:5000/api/episodes/foo
+GET http://localhost:5000/api/episodes/60044d8b7b651d0b8c0e3614
 
 ###
 
 # Create new episode
-
 POST http://localhost:5000/api/episodes/create
 Content-Type: application/json
-{}
+
+{
+  "title": "Steven Kotler- Achieving Peak Performance",
+  "url": "https://podcasts.google.com/feed/aHR0cHM6LybS9yc3M/episode/OWVhYTk3OM0OWQzNTQ0",
+  "description": "Steven Kotler is a New York Times bestselling author, executive director of the Flow Research Collective, and peak performance expert."
+}
 
 ###
 
 # Update existing episode
 PATCH http://localhost:5000/api/episodes/update
 Content-Type: application/json
-{}
+
+{
+  "_id": "60044d8b7b651d0b8c0e3614",
+  "title": "Steven Kotler- Achieving Peak Performance & Taking on The Impossible"
+}
 
 ###
 
 # Delete existing episode
-DELETE HTTP/1.1 http://localhost:5000/api/episodes/delete
+DELETE http://localhost:5000/api/episodes/delete
 Content-Type: application/json
-{}
+
+{
+  "_id": "60044d8b7b651d0b8c0e3614"
+}
