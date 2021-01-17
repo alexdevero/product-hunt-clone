@@ -52,15 +52,19 @@ router.post('/create', async (req, res) => {
 
 router.patch('/update', async (req, res) => {
   try {
-    const updateEpisode = { ...req.body }
+    if (req.body._id !== null) {
+      const updateEpisode = { ...req.body }
 
-    const episode = Episode.findOneAndUpdate({ username: req.body.episode_id }, updateEpisode, { useFindAndModify: false }, (err) => {
-      if (err) {
-        res.status(500).json({ message: err })
-      } else {
-        res.json({ message: 'User updated.' })
-      }
-    })
+      const episode = Episode.findOneAndUpdate({ _id: req.body._id }, updateEpisode, { useFindAndModify: false }, (err) => {
+        if (err) {
+          res.status(500).json({ message: err.message })
+        } else {
+          res.json({ message: 'Episode updated.' })
+        }
+      })
+    } else {
+      res.status(500).json({ message: 'Please specify episode id.' })
+    }
   } catch (err) {
     res.status(500).json({
       message: err.message
