@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:episode_id', async (req, res) => {
   try {
-    const episode = await Episode.find({ id: req.params.episode_id })
+    const episode = await Episode.find({ _id: req.params.episode_id })
 
     if (episode !== null || (Array.isArray(episode) && episode.length !== 0)) {
       res.json(episode)
