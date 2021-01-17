@@ -16,6 +16,9 @@ const helmet = require('helmet')
 // Connect MongoDB
 const mongoose = require('mongoose')
 
+// Import config
+const config = require('./../config.js')
+
 const MONGODB_URI = config.mongoDBUri || 'mongodb://localhost/fullstack-express-react-mongodb-app'
 
 mongoose.connect(MONGODB_URI, {
