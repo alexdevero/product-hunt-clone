@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:episode_id', async (req, res) => {
   try {
-    const episode = await Episode.find({ _id: req.params.episode_id })
+    const episode = await Episode.find({ id: req.params.episode_id })
 
     if (episode !== null || (Array.isArray(episode) && episode.length !== 0)) {
       res.json(episode)
@@ -40,9 +40,9 @@ router.post('/create', async (req, res) => {
       description: req.body.description
     })
 
-    const newEpisode = await episode.save()
-
-    res.json({ message: 'Episode created.' })
+    const newEpisode = await episode.save().then(() => {
+      res.json({ message: 'Episode created.' })
+    })
   } catch (err) {
     res.status(500).json({
       message: err.message
