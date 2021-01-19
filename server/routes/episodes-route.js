@@ -43,6 +43,8 @@ router.post('/create', async (req, res) => {
         message: err.message
       })
     })
+  } else {
+    res.status(500).json({ message: 'Please fill in all information.' })
   }
 })
 
