@@ -8,7 +8,8 @@
     "type": "git",
     "url": "https://github.com/alexdevero/product-hunt-clone.git"
   },
-  "homepage": "https://github.com/alexdevero/product-hunt-clone#readme",
+  "proxy": "http://localhost:3001",
+  "homepage": ".",
   "bugs": {
     "url": "https://github.com/alexdevero/pproduct-hunt-clone/issues"
   },
@@ -50,7 +51,6 @@
       "last 1 safari version"
     ]
   },
-  "main": "main.js",
   "scripts": {
     "start-server": "nodemon server/app.js",
     "start-client": "react-scripts start",
@@ -86,6 +86,7 @@
     "@types/node": "^14.14.20",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/parser": "^4.13.0",
     "concurrently": "^5.3.0",
     "eslint": "^7.17.0",
     "nodemon": "^2.0.7",
