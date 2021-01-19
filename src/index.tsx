@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import App from './components/app'
+import { Router } from './router'
 
 import './styles/modern-normalize.css'
 import './styles/bootstrap.min.css'
@@ -11,7 +11,7 @@ import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router />
   </React.StrictMode>,
   document.getElementById('root')
 )
