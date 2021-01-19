@@ -1,0 +1,40 @@
+# Get all episodes
+GET http://localhost:5000/api/episodes
+
+###
+
+# Get specific episode
+GET http://localhost:5000/api/episodes/6004519db3ca173fdcf78b18
+
+###
+
+# Create new episode
+POST http://localhost:5000/api/episodes/create
+Content-Type: application/json
+
+{
+  "title": "Steven Kotler- Achieving Peak",
+  "url": "https://podcasts.google.com/feed/aHR0cHM6LybS9yc3M/episode/OWVhYTk3OM0zNTQ0",
+  "description": "Steven Kotler"
+}
+
+###
+
+# Update existing episode
+PATCH http://localhost:5000/api/episodes/update
+Content-Type: application/json
+
+{
+  "_id": "6004519db3ca173fdcf78b18",
+  "title": "Steven Kotler- Peak Performance & Taking on The Impossible"
+}
+
+###
+
+# Delete existing episode
+DELETE http://localhost:5000/api/episodes/delete
+Content-Type: application/json
+
+{
+  "_id": "600575d0bd8cef1c5862f791"
+}
