@@ -73,6 +73,8 @@ router.delete('/delete', async (req, res) => {
         res.json({ message: 'Episode deleted.' })
       }
     })
+  } else {
+    res.status(500).json({ message: 'Please specify episode id.' })
   }
 })
 
