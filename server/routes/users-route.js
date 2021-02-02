@@ -23,3 +23,18 @@ router.get('/:user_id', async (req, res) => {
   })
 })
 
+router.post('/create', async (req, res) => {
+  if (req.body.name !== null && req.body.username !== null && req.body.email !== null && req.body.password !== null) {
+    const user = await new User({
+      name: req.body.name,
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
+    })
+    .save()
+    .then(() => res.json({ message: 'User registration successful.' }))
+    .catch((err) => res.status(500).json({ message: err.message }))
+  } else {
+    res.status(500).json({ message: 'Please fill in all information.' })
+  }
+})
