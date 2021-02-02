@@ -54,3 +54,19 @@ router.patch('/update', async (req, res) => {
     res.status(500).json({ message: 'Please specify user id.' })
   }
 })
+
+router.delete('delete', async (req, res) => {
+  if (req.body._id !== null) {
+    const user = User.deleteOne({ _id: req.body._id }, (err) => {
+      if (err) {
+        res.status(500).json({ message: err.message })
+      } else {
+        res.json({ message: 'User deleted.' })
+      }
+    })
+  } else {
+    res.status(500).json({ message: 'Please specify user id.' })
+  }
+})
+
+module.exports = router
