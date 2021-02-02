@@ -38,3 +38,19 @@ router.post('/create', async (req, res) => {
     res.status(500).json({ message: 'Please fill in all information.' })
   }
 })
+
+router.patch('/update', async (req, res) => {
+  if (req.body._id !== null) {
+    const updateUser = { ...req.body }
+
+    const user = await User.findOneAndUpdate({ id: req.body._id }, updateUser, { useFindAndModify: false }, (err) => {
+      if (err) {
+        res.status(500).json({ message: err.message })
+      } else {
+        res.json({ message: 'User updated.' })
+      }
+    })
+  } else {
+    res.status(500).json({ message: 'Please specify user id.' })
+  }
+})
