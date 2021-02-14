@@ -38,3 +38,13 @@ Content-Type: application/json
 {
   "_id": "600575d0bd8cef1c5862f791"
 }
+
+###
+
+# Delete all episodes
+DELETE http://localhost:5000/api/episodes/defcon
+Content-Type: application/json
+
+{
+  "secret_password": "foo_bazz"
+}

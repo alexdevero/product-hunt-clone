@@ -78,17 +78,17 @@ router.delete('/delete', async (req, res) => {
   }
 })
 
-router.delete('defcon', async (req, res) => {
-  if (req.body.secret_pasword !== null) {
-    const episode = Episode.remove((err) => {
+router.delete('/defcon', async (req, res) => {
+  if (req.body.secret_password !== null) {
+    const episode = Episode.deleteMany((err) => {
       if (err) {
         res.status(500).json({ message: err.message })
       } else {
-        res.json({ message: 'All episodes deleted.' })
+        res.status(200).json({ message: 'All episodes deleted.' })
       }
     })
   } else {
-    res.status(500).json({ message: 'Please secret password to delete everything.' })
+    res.status(500).json({ message: 'Please specify secret password to delete everything.' })
   }
 })
 
