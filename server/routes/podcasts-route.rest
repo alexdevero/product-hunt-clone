@@ -1,0 +1,49 @@
+# Get all podcasts
+GET http://localhost:5000/api/podcasts
+
+###
+
+# Get specific podcast
+GET http://localhost:5000/api/podcasts/602931f843fdcc1848aaaf1e
+
+###
+
+# Create new podcast
+POST http://localhost:5000/api/podcasts/create
+Content-Type: application/json
+
+{
+  "title": "The Tim Ferriss Show",
+  "url": "https://tim.blog/podcast/"
+}
+
+###
+
+# Update existing podcast
+PATCH http://localhost:5000/api/podcasts/update
+Content-Type: application/json
+
+{
+  "_id": "602931f843fdcc1848aaaf1e",
+  "title": "Steven Kotler- Peak Performance & Taking on The Impossible"
+}
+
+###
+
+# Delete existing podcast
+DELETE http://localhost:5000/api/podcasts/delete
+Content-Type: application/json
+
+{
+  "_id": "602931f843fdcc1848aaaf1e"
+}
+
+###
+
+# Delete all podcasts
+DELETE http://localhost:5000/api/podcasts/defcon
+Content-Type: application/json
+
+{
+  "secret_password": "foo_bazz"
+}
