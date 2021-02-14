@@ -29,7 +29,7 @@ router.post('/create', async (req, res) => {
       name: req.body.name,
       username: req.body.username,
       email: req.body.email,
-      password: req.body.password,
+      password: req.body.password
     })
     .save()
     .then(() => res.json({ message: 'User registration successful.' }))
@@ -42,8 +42,8 @@ router.post('/create', async (req, res) => {
 router.patch('/update', async (req, res) => {
   if (req.body._id !== null) {
     const updateUser = { ...req.body }
-
-    const user = await User.findOneAndUpdate({ id: req.body._id }, updateUser, { useFindAndModify: false }, (err) => {
+    console.log(updateUser)
+    const user = await User.findOneAndUpdate({ _id: req.body._id }, updateUser, { useFindAndModify: false }, (err) => {
       if (err) {
         res.status(500).json({ message: err.message })
       } else {
@@ -55,7 +55,7 @@ router.patch('/update', async (req, res) => {
   }
 })
 
-router.delete('delete', async (req, res) => {
+router.delete('/delete', async (req, res) => {
   if (req.body._id !== null) {
     const user = User.deleteOne({ _id: req.body._id }, (err) => {
       if (err) {
@@ -69,7 +69,7 @@ router.delete('delete', async (req, res) => {
   }
 })
 
-router.delete('defcon', async (req, res) => {
+router.delete('/defcon', async (req, res) => {
   if (req.body.secret_password !== null) {
     const user = User.remove((err) => {
       if (err) {
