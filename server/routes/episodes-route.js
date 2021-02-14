@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
         message: err.message
       })
     } else {
-      res.json(data)
+      res.status(200).json(data)
     }
   })
 })
@@ -23,7 +23,7 @@ router.get('/:episode_id', async (req, res) => {
         message: err.message
       })
     } else {
-      res.json(data)
+      res.status(200).json(data)
     }
   })
 })
@@ -37,7 +37,7 @@ router.post('/create', async (req, res) => {
     })
 
     const newEpisode = await episode.save().then(() => {
-      res.json({ message: 'Episode created.' })
+      res.status(200).json({ message: 'Episode created.' })
     }).catch(err => {
       res.status(500).json({
         message: err.message
@@ -56,7 +56,7 @@ router.patch('/update', async (req, res) => {
       if (err) {
         res.status(500).json({ message: err.message })
       } else {
-        res.json({ message: 'Episode updated.' })
+        res.status(200).json({ message: 'Episode updated.' })
       }
     })
   } else {
@@ -70,7 +70,7 @@ router.delete('/delete', async (req, res) => {
       if (err) {
         res.status(500).json({ message: err.message })
       } else {
-        res.json({ message: 'Episode deleted.' })
+        res.status(200).json({ message: 'Episode deleted.' })
       }
     })
   } else {
