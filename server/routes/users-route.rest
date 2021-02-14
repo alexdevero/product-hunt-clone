@@ -4,7 +4,7 @@ GET http://localhost:5000/api/users
 ###
 
 # Get specific user
-GET http://localhost:5000/api/users/602931f843fdcc1848aaaf1e
+GET http://localhost:5000/api/users/602936e981507b13ecb416f6
 
 ###
 
@@ -13,8 +13,10 @@ POST http://localhost:5000/api/users/create
 Content-Type: application/json
 
 {
-  "title": "The Tim Ferriss Show",
-  "url": "https://tim.blog/podcast/"
+  "name": "Jack Doe",
+  "username": "jackydoe",
+  "email": "jack@doe.com",
+  "password": "password1234"
 }
 
 ###
@@ -24,8 +26,8 @@ PATCH http://localhost:5000/api/users/update
 Content-Type: application/json
 
 {
-  "_id": "602931f843fdcc1848aaaf1e",
-  "title": "Steven Kotler- Peak Performance & Taking on The Impossible"
+  "_id": "602937690330d83fe867f2e7",
+  "username": "doedoe"
 }
 
 ###
@@ -35,7 +37,7 @@ DELETE http://localhost:5000/api/users/delete
 Content-Type: application/json
 
 {
-  "_id": "602931f843fdcc1848aaaf1e"
+  "_id": "602936e981507b13ecb416f6"
 }
 
 ###
