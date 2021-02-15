@@ -42,7 +42,7 @@ router.post('/create', async (req, res) => {
 router.patch('/update', async (req, res) => {
   if (req.body._id !== null) {
     const updateUser = { ...req.body }
-    console.log(updateUser)
+
     const user = await User.findOneAndUpdate({ _id: req.body._id }, updateUser, { useFindAndModify: false }, (err) => {
       if (err) {
         res.status(500).json({ message: err.message })
